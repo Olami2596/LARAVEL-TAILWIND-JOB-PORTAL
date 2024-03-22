@@ -1,0 +1,40 @@
+Api
+php artisan make:controller Api/AttendeeController --api 
+controller for api
+php artisan make:factory EventFactory --model=Event
+factory
+php artisan make:seeder EventSeeder
+seeder
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan migrate
+to use Sanctum authentication
+php artisan make:policy EventPolicy --model=Event
+artsian commeand to create policy
+php artisan make:command SendEventReminders amd the name of the command can be found in the custom artisan command file (SendEventReminders.php) in the protected signature (app:send-event-reminders)
+artisan command to create custom artisan command
+php artisan app:send-event-reminders
+artisan command to run the event
+go to kernel.php in app/console to create schedules that is task you want to run at intervals maybe sending emails or unning a specific code etc and to run the schedule locally you use php artisan schedule:work read docs on task scheduler to see how to run it in prod
+php artisan make:notification EventReminderNotification
+artisan command to create notifications
+endApi
+
+php artisan make:model Job -mf
+the mf runs migration and creates factory
+composer require barryvdh/laravel-debugbar --dev
+use to install laravel debugbar which should ony be used in development not production the run 
+to install tailwind go to tailwind website and search for install with laravel and install using vite follow the process to install tailwind into project using vite
+php artisan make:component Layout --view
+to create a component without php class just blade template
+npm install -D @tailwindcss/forms
+to run tailwind forms plugin then put require('@tailwindcss/forms') in the tailwind.config.js file in the plugin section
+visit heroicons.com for free icons
+go to alpine js website and click on get started then installation and follow the steps to install alpinejs  put the import Alpine from 'alpinejs' window.Alpine = Alpine Alpine.start() into bootstrap.js file then add @vite(['resources/css/app.css', 'resources/js/app.js']) in the layout file
+php artisan db:wipe ; php artisan migrate
+to remove evrything in the db and rerun the migration and remember that this should only be used in development and never in production
+in filesystems.php a path to store the cv's uploaded privately and not accessible to the public was created wuth the named  private.
+php artisan make:middleware Employer
+to create a custom middleware for a generic model after creating go to kernel.php file in the app.hhtp folder and register the middleware and this was done in the protected $middlewareAliases section
+
+to create livewire 
+php artisan make:livewire CreatePoll
